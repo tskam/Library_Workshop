@@ -1,0 +1,73 @@
+---
+title: "R Series Episode 2"
+subtitle: ""
+author: "Dr. Kam Tin Seong"
+institute: ""
+format: 
+  revealjs:
+    width: 1600
+    height: 900
+    incremental: false
+---
+
+## Why are you here?
+
+Because you are:
+
+:::{.incremental}
+-   tired of creating PowerPoint slides
+
+-   interested to create awesome web slides using R
+:::
+
+## Helo Plot
+
+```{r}
+pacman::p_load(tidyverse, knitr, DT) 
+
+exam_data <- read_csv("data/Exam_data.csv")
+
+ggplot(data=exam_data, aes(x = MATHS)) +
+  geom_histogram(bins=10, 
+                 boundary = 100,
+                 color="black", 
+                 fill="light blue") +
+  ggtitle("Distribution of Maths scores")
+```
+
+## Splot columns slide
+
+:::columns
+:::{.column width="45%"}
+```{r}
+#| echo: true
+#| eval: false
+ggplot(data=exam_data, aes(x = MATHS)) +
+  geom_histogram(bins=10, 
+                 boundary = 100,
+                 color="black", 
+                 fill="light blue") +
+  ggtitle("Distribution of Maths scores")
+```
+:::
+
+:::{.column width="45%"}
+```{r}
+#| echo: false
+#| eval: true
+#| fig-height: 8
+ggplot(data=exam_data, aes(x = MATHS)) +
+  geom_histogram(bins=10, 
+                 boundary = 100,
+                 color="black", 
+                 fill="light blue") +
+  ggtitle("Distribution of Maths scores")
+```
+:::
+:::
+
+
+
+
+
+
